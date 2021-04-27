@@ -4,11 +4,13 @@
 #include <ESP8266WiFi.h>
 #include <ESPAsyncWebServer.h>
 
+#define AP_SSID "ESPWiFi-"
 
+#define MAX_ATTEMPTS    5
 #define WEB_SERVER_PORT 80
-#define APRAND_LOWER 100
-#define APRAND_UPPER 500
-#define RANDSSID_LEN 13
+#define APRAND_LOWER    100
+#define APRAND_UPPER    500
+
 
 #ifndef DEBUG_MSG
 #ifdef DEBUG_ESP_PORT
@@ -37,8 +39,9 @@ class ESPWifiManager {
     public:
         ESPWifiManager();
         bool isConnected();
+        //todo setApSssid
 };
 
-extern ESPWifiManager ESPWifiManager;
+extern ESPWifiManager WiFiManager;
 
 #endif

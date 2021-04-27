@@ -12,7 +12,7 @@
  */
 ESPWifiManager::ESPWifiManager() : apMode(false), wifiClient(), apServer(WEB_SERVER_PORT)
 {
-    createAPServer(apServer)
+    createAPServer(apServer);
 }
 
 
@@ -47,12 +47,12 @@ bool ESPWifiManager::connectToWifi()
     WiFi.mode(WIFI_STA);
     uint8_t attempt = 0;
 
-    ConnectionInfo info = EepromManager.readConnectionInfo();
+    ConnectionInfo info = EeManager.readConnectionInfo();
 
     while (attempt < MAX_ATTEMPTS) {
         attempt++;
         DEBUG_MSG("Connecting to the WiFi - Attempt n.%d\n", attempt);
-        WiFi.begin(info.SSID, info.KEY);
+        WiFi.begin(info.ssid, info.key);
         if (WiFi.waitForConnectResult() == WL_CONNECTED) {
             return true;
         }
@@ -65,7 +65,7 @@ bool ESPWifiManager::connectToWifi()
 void ESPWifiManager::activateAPMode()
 {
     const long APRand = random(APRAND_LOWER, APRAND_UPPER);
-    char randSSID[RANDSSID_LEN];
+    char randSSID[SSID_LENGTH];
     snprintf(randSSID, sizeof(randSSID), "%s%d", AP_SSID, APRand);
 
     // Init ESP WiFi as AP
@@ -74,4 +74,6 @@ void ESPWifiManager::activateAPMode()
     apMode = true;
     apServer.begin();
 }
+
+ESPWifiManager WiFiManager;
 

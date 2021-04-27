@@ -1,5 +1,6 @@
 #include "EepromManager.hpp"
 
+EepromManager EeManager;
 
 void EepromManager::start() {
     if(started) {

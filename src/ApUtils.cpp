@@ -1,4 +1,5 @@
 #include "EspWifiManager.h"
+#include "EepromManager/EepromManager.hpp"
 
 /**
  * @brief 
@@ -37,7 +38,7 @@ void createAPServer(AsyncWebServer &server)
     });
 
     server.on("/connect", HTTP_POST, [](AsyncWebServerRequest *request) {
-        if (!WifiWrapperNoTLS::validPostConnect(request))
+        if (!validPostConnect(request))
         {
             request->send(422, "text/plain", "wrong syntax");
             return;
@@ -47,14 +48,14 @@ void createAPServer(AsyncWebServer &server)
 
         ConnectionInfo info;
 
-        info.ok = CONN_OK;
+        info.ok = true;
         String ssid = request->getParam("ssid", true)->value();
         String key = request->getParam("key", true)->value();
 
-        strncpy(info.SSID, ssid.c_str(), SSID_LENGTH);
-        strncpy(info.KEY, key.c_str(), KEY_LENGTH);
+        strncpy(info.ssid, ssid.c_str(), SSID_LENGTH);
+        strncpy(info.key, key.c_str(), KEY_LENGTH);
 
-        EepromManager.writeConnectionInfo(&info);
+        EeManager.writeConnectionInfo(&info);
         ESP.reset();
     });
 }
