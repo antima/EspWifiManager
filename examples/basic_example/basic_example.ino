@@ -8,5 +8,4 @@ void loop() {
     if(WiFiManager.isConnected()) {
         // your logic here
     }
-    // if you're here, AP mode is currently active
 }

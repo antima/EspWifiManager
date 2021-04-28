@@ -23,9 +23,6 @@
 
 extern const char login_html[2660];
 
-static void createAPServer(AsyncWebServer &server);
-static bool validPostConnect(AsyncWebServerRequest *request);
-
 
 class ESPWifiManager {
     private:
