@@ -35,8 +35,8 @@ class ESPWifiManager {
 
     public:
         ESPWifiManager();
+        void loop();
         bool isConnected();
-        //todo setApSssid
 };
 
 extern ESPWifiManager WiFiManager;

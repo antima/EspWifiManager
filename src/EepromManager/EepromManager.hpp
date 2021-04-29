@@ -13,7 +13,6 @@
 
 
 struct ConnectionInfo {
-    bool ok;
     char ssid[SSID_LENGTH];
     char key[KEY_LENGTH];
 };

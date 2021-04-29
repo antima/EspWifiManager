@@ -5,7 +5,10 @@ void setup() {
 }
 
 void loop() {
-    if(WiFiManager.isConnected()) {
-        // your logic here
+    WiFiManager.loop(); // call this in the loop function
+    if(WiFiManager.isConnected())
+    {
+        // this is executed if the ESP is connected
+        // to the network
     }
 }

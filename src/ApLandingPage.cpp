@@ -4,7 +4,7 @@ const char login_html[] PROGMEM = R"===(
 <html>
     <head>
         <title>
-            Moody Node - Connect to WiFi
+            ESPWifiManager - Connect to WiFi
         </title>
         <style>
             .login {
@@ -50,10 +50,6 @@ const char login_html[] PROGMEM = R"===(
                     <td><input type="password" name="key" id="key"/></td>
                 </tr>
                 <tr>
-                    <td>Broker Address:</td>
-                    <td><input type="text" name="broker" id="broker"/></td>
-                </tr>
-                <tr>
                     <td><input type="submit" value="Connect" onclick="save_credentials()" /></td>
                 </tr>
             </table>
@@ -73,11 +69,10 @@ const char login_html[] PROGMEM = R"===(
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             let ssid = document.getElementById("ssid").value;
             let key = document.getElementById("key").value;
-            let broker = document.getElementById("broker").value;
-            if(!ssid || !key || !broker) {
+            if(!ssid || !key) {
                 alert("A field is missing!");
             }
-            let params = "ssid="+ssid+"&key="+key+"&broker="+broker;
+            let params = "ssid="+ssid+"&key="+key;
             xhttp.send(params);
         }
 
