@@ -17,7 +17,7 @@ This library manages your WiFi connection by doing two things:
   
 By doing this, you don't have to re-flash your firmware every time you change WiFi network and you don't have to include your credentials into your code as hardcoded variables.
 
-When yhe ESP can't connect to the network, it will switch into Access Point mode, and you will be able to connect to it through a WiFi-enabled device. Its address will be in the **ESPWiFi-xxx** format, where **xxx** is a string of three random digits.
+When the ESP can't connect to the network, it will switch into Access Point mode, and you will be able to connect to it through a WiFi-enabled device. Its address will be in the **ESPWiFi-xxx** format, where **xxx** is a string of three random digits.
 
 After you connect to the ESP access point, you can input your WiFi ssid and key through a web interface available at the http://192.168.4.1 address.
 
