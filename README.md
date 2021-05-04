@@ -6,6 +6,7 @@ A simple credential manager that takes care of the boring part of writing Wifi-b
   - [About](#about) 
   - [Installation](#installation-arduino-ide)
   - [How To](#how-to)
+  - [License](#license)
 
 
 ## About
@@ -45,3 +46,10 @@ void loop() {
     }
 }
 ```
+
+## License
+
+This library is released under the LGPL 2.1 license. 
+The ESP Async WebServer library used by this library is released under the LGPL 2.1 license.
+
+For more information regarding the licensing of the Arduino API, ESP8266 Arduino core, Arduino IDE, ecc, you can check out [this page](https://github.com/esp8266/Arduino#license-and-credits).
