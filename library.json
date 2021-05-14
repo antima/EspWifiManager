@@ -1,0 +1,30 @@
+{
+    "name": "EspWifiManager",
+    "version": "0.0.1",
+    "description": "A wifi manager for arduino-core based ESP applications, with an AP server to input wifi credentials, saving them on non volatile memory",
+    "keywords": "sensor, actuator, moody",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/antima/EspWifiManager.git"
+    },
+    "authors": [
+        {
+            "name": "Gianmarco Marcello",
+            "email": "g.marcello@antima.it",
+            "url": "https://mar.antima.it/",
+            "maintainer": true
+        }
+    ],
+    "license": "LGPL-2.1",
+    "homepage": "https://github.com/antima/EspWifiManager",
+    "dependencies": [
+        {
+            "name": "ESP Async WebServer",
+            "platforms": [
+                "espressif8266"
+            ]
+        }
+    ],
+    "frameworks": "arduino",
+    "platforms": "espressif8266"
+}
