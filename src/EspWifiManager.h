@@ -1,9 +1,12 @@
 #ifndef ESPWIFIMANAGER_H_
 #define ESPWIFIMANAGER_H_
 
+#if defined(ESP8266)
 #include <ESP8266WiFi.h>
 #include <ESPAsyncWebServer.h>
-
+#else
+// case WiFiNina
+#endif
 #define AP_SSID "ESPWiFi-"
 
 #define MAX_ATTEMPTS    5
